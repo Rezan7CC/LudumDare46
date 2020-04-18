@@ -36,7 +36,7 @@ public class PowerGenerator : MonoBehaviour
         }
     }
 
-    void AddFuel(float fuelAmount)
+    public void AddFuel(float fuelAmount)
     {
         m_fuel += fuelAmount;
         m_fuel = Mathf.Clamp01(m_fuel);
@@ -48,7 +48,7 @@ public class PowerGenerator : MonoBehaviour
         }
     }
 
-    void RemoveFuel(float fuelAmount)
+    public void RemoveFuel(float fuelAmount)
     {
         m_fuel -= fuelAmount;
         m_fuel = Mathf.Clamp01(m_fuel);
