@@ -65,15 +65,12 @@ public class PlayerMovement : MonoBehaviour
             Ray mouseRay = m_camera.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(mouseRay, out RaycastHit hitInfo, 1000, m_mouseRayCastLayer.value))
             {
+                Vector3 targetPosition = hitInfo.point;
+                targetPosition.y = transform.position.y;
+                
                 transform.rotation = Quaternion.RotateTowards(transform.rotation,
-                    Quaternion.LookRotation((hitInfo.point - transform.position).normalized, Vector2.up), m_maxRotationSpeed);
+                    Quaternion.LookRotation((targetPosition - transform.position).normalized, Vector2.up), m_maxRotationSpeed);
             }
-            
-            // Vector2 currentSpeed = new Vector2(velocity.x, velocity.z);
-            // if (currentSpeed.magnitude > 0.05f)
-            // {
-            //     transform.rotation = Quaternion.LookRotation(new Vector3(velocity.x, 0, velocity.z), Vector2.up);
-            // }
         }
     }
 }
