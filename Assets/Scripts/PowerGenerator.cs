@@ -203,8 +203,8 @@ public class PowerGenerator : MonoBehaviour
         {
             StopAllCoroutines();
             StartCoroutine(FuelTickDown());
-            StartCoroutine(PlayStoryText());
             m_achievedStage = m_currentStage;
+            StartCoroutine(PlayStoryText());
         }
 
         SetFuelFillUI(m_fuel);
