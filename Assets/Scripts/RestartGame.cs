@@ -22,6 +22,8 @@ public class RestartGame : MonoBehaviour
 	IEnumerator RestartDelay()
 	{
 		yield return StartCoroutine(WaitForRealSeconds(0.5f));
+		PowerGenerator.m_currentStage = FurnaceStage.Stage1;
+		PowerGenerator.m_achievedStage = FurnaceStage.Stage1;
 		Time.timeScale = 1.0f;
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}

@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Tree
+  - Coal
+  - TP
   layers:
   - Default
   - TransparentFX
@@ -15,10 +18,10 @@ TagManager:
   - 
   - Terrain
   - MouseRay
-  - 
-  - 
-  - 
-  - 
+  - Camera
+  - Tree
+  - TP
+  - TPGatherer
   - 
   - 
   - 

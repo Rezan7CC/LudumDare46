@@ -11,11 +11,14 @@ public class PlayerMovement : MonoBehaviour
     public float m_decelerationSpeed = 200.0f;
     public float m_maxRotationSpeed = 100.0f;
     public float m_maxTiltAngle = 30.0f;
+    public float m_tileSmoothTime = 2.0f;
+    public float m_tiltMaxSpeed = 100.0f;
     public LayerMask m_mouseRayCastLayer;
 
     public Transform m_segwayBodySlotTransform;
     public Transform m_playerBodySlotTransform;
 
+    private float m_tiltVelocity;
     private Rigidbody m_rigidbody;
     private Camera m_camera;
 
@@ -57,7 +60,10 @@ public class PlayerMovement : MonoBehaviour
             {
                 Quaternion segwayBodyRotation = m_segwayBodySlotTransform.localRotation;
                 Vector3 segwayBodyAngles = segwayBodyRotation.eulerAngles;
-                segwayBodyAngles.x = Mathf.Lerp(0, m_maxTiltAngle, currentSpeed.magnitude / m_maxSpeed);
+                segwayBodyAngles.x = Mathf.SmoothDamp(segwayBodyAngles.x,
+                    Mathf.Lerp(0, m_maxTiltAngle, currentSpeed.magnitude / m_maxSpeed),
+                    ref m_tiltVelocity, m_tileSmoothTime, m_tiltMaxSpeed, Time.deltaTime);
+                
                 segwayBodyRotation.eulerAngles = segwayBodyAngles;
                 m_segwayBodySlotTransform.localRotation = segwayBodyRotation;
             }

@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public enum ResourceType
 {
-    Wood
+    Wood,
+    Coal
 }
 
 public struct GatherInfo
@@ -19,8 +21,18 @@ public class FuelResource : MonoBehaviour
     public int m_resourcesPerHit = 10;
     public ResourceType m_resourceType = ResourceType.Wood;
 
-    public GatherInfo Gather()
+    public GatherInfo Gather(ToolType toolType)
     {
+        if (m_resourceType == ResourceType.Wood && toolType != ToolType.Axe)
+        {
+            return  new GatherInfo{amount = 0, resourceType = m_resourceType};
+        }
+        
+        if (m_resourceType == ResourceType.Coal && toolType != ToolType.Pickaxe)
+        {
+            return  new GatherInfo{amount = 0, resourceType = m_resourceType};
+        }
+        
         m_health -= m_resourcesPerHit;
         if (m_health <= 0)
         {
