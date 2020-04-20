@@ -20,6 +20,8 @@ public class FuelResource : MonoBehaviour
     public int m_health = 100;
     public int m_resourcesPerHit = 10;
     public ResourceType m_resourceType = ResourceType.Wood;
+    public GameObject m_destructEffectPrefab;
+    public float m_destructEffectHeightOffset = 1.0f;
 
     public GatherInfo Gather(ToolType toolType)
     {
@@ -36,6 +38,8 @@ public class FuelResource : MonoBehaviour
         m_health -= m_resourcesPerHit;
         if (m_health <= 0)
         {
+            Instantiate(m_destructEffectPrefab, transform.position + new Vector3(0, m_destructEffectHeightOffset, 0),
+                Quaternion.identity);
             Destroy(gameObject);
         }
 

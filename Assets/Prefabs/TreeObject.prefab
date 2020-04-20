@@ -47,6 +47,9 @@ MonoBehaviour:
   m_health: 100
   m_resourcesPerHit: 25
   m_resourceType: 0
+  m_destructEffectPrefab: {fileID: 4736869359518150843, guid: 43752b2786dea7c489426cafc05de812,
+    type: 3}
+  m_destructEffectHeightOffset: 3
 --- !u!1 &2540185248078956099
 GameObject:
   m_ObjectHideFlags: 0

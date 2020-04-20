@@ -1115,6 +1115,12 @@ MonoBehaviour:
   m_toolPickaxeNumberUI: {fileID: 0}
   m_toolAxeTextUI: {fileID: 0}
   m_toolPickaxeTextUI: {fileID: 0}
+  m_chopTreeEffectPrefab: {fileID: 24009953494684818, guid: 67ad8df27b59c0b46887e42b2ddf18a8,
+    type: 3}
+  m_hitCoalEffectPrefab: {fileID: 5949402552330161890, guid: 2e2b47ac4d43327419656acea69c3af5,
+    type: 3}
+  m_axeHitPosition: {fileID: 8786921482667644310}
+  m_pickaxeHitPosition: {fileID: 7641844299929868447}
   m_armState: 0
 --- !u!114 &3116009309402926332
 MonoBehaviour:
@@ -1217,6 +1223,7 @@ Transform:
   - {fileID: 6225167929404462815}
   - {fileID: 1372017411879298342}
   - {fileID: 2826213405910706696}
+  - {fileID: 706504362140470325}
   m_Father: {fileID: 4526864885916544066}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
@@ -1394,9 +1401,9 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4278190080
   m_fontSize: 0.45
-  m_fontSizeBase: 36
+  m_fontSizeBase: 0.45
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 0
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -1630,9 +1637,9 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4278190080
   m_fontSize: 0.45
-  m_fontSizeBase: 36
+  m_fontSizeBase: 0.45
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 0
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -2184,6 +2191,7 @@ Transform:
   - {fileID: 7136063541117163022}
   - {fileID: 5337705956479838802}
   - {fileID: 8368287450456820920}
+  - {fileID: 7185952981119080455}
   m_Father: {fileID: 4526864885916544066}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
@@ -2643,6 +2651,36 @@ Transform:
   m_Father: {fileID: 7857236356077497799}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 12.242001, y: -8.005, z: 3.1550002}
+--- !u!1 &7641844299929868447
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7185952981119080455}
+  m_Layer: 0
+  m_Name: PickaxeHitPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7185952981119080455
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7641844299929868447}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.95, y: 11.57, z: -0.655}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1051742518320819794}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7961927939081792927
 GameObject:
   m_ObjectHideFlags: 0
@@ -2892,10 +2930,10 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 0.4
-  m_fontSizeBase: 36
+  m_fontSize: 0.45
+  m_fontSizeBase: 0.45
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 0
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -3035,6 +3073,36 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &8786921482667644310
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 706504362140470325}
+  m_Layer: 0
+  m_Name: AxeHitPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &706504362140470325
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8786921482667644310}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.5, y: -0.7, z: 0.32}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5363808585712761035}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9196245646681930137
 GameObject:
   m_ObjectHideFlags: 0

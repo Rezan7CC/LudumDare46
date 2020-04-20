@@ -31,6 +31,12 @@ public class PlayerAttack : MonoBehaviour
     public TMP_Text m_toolAxeTextUI = null;
     public TMP_Text m_toolPickaxeTextUI = null;
 
+    public GameObject m_chopTreeEffectPrefab = null;
+    public GameObject m_hitCoalEffectPrefab = null;
+
+    public GameObject m_axeHitPosition;
+    public GameObject m_pickaxeHitPosition;
+
     private ToolType m_activeTool = ToolType.Axe;
     public ArmState m_armState = ArmState.Idle;
     private float m_defaultRotationRad;
@@ -225,11 +231,13 @@ public class PlayerAttack : MonoBehaviour
             {
                 case ResourceType.Wood:
                 {
+                    GameObject.Instantiate(m_chopTreeEffectPrefab, m_axeHitPosition.transform.position, Quaternion.identity);
                     m_playerInventory.AddWood(gatherInfo.amount);
                     break;
                 }
                 case ResourceType.Coal:
                 {
+                    GameObject.Instantiate(m_hitCoalEffectPrefab, m_pickaxeHitPosition.transform.position, Quaternion.identity);
                     m_playerInventory.AddCoal(gatherInfo.amount);
                     break;
                 }
